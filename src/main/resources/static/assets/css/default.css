@@ -8,6 +8,7 @@
 	    width: 17rem;
 	    height: 100vh;
 	    padding-top: 3%;
+	    padding-bottom: 3%;
 	  }
 	  #sideNav .navbar-brand {
 	    display: flex;
