@@ -1,0 +1,34 @@
+.modal{width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10;}
+.modal-overlay {width: 100%; height: 100%; background-color: #00000033}
+.modal-container {padding:2% 3%; position: absolute; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; background-color: white; border-radius: 5px;}
+.login-modal .modal-container {top: 34%; left: 41%; right: 41%; bottom: 34%;}
+.join-modal .modal-container {top: 24%; left: 41%; right: 41%; bottom: 30%;}
+.modal-title{
+	text-align: center;
+	width:100%;
+	font-size:2rem;
+	margin-bottom:15px;
+}
+.modal-input-div{
+	width:100%;
+	height:45px;
+	border-radius:4px;
+	border:4px solid rgb(248, 132, 92);
+	margin-bottom:10px;
+	padding: 0 2%;  
+}
+.modal-input{
+	width:100%;
+	height:100%;
+	border:none;
+}
+.modal-submit{
+	background:rgb(248, 132, 92);
+	margin-top:20px;
+}
+.modal-submit:hover{
+	background:rgb(268,152,112);
+}
+.active {
+	display: block;
+}

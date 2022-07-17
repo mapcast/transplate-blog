@@ -1,0 +1,13 @@
+<th:block th:fragment="joinFragment">
+	<div class="modal join-modal">
+	    <div class="modal-overlay"></div>
+	    <div class="modal-container">
+	    <div class="modal-title">회원가입</div>
+	        <div class="modal-input-div"><input data-input="userId" class="modal-input nooutline" placeholder="아이디"></input></div>
+	        <div class="modal-input-div"><input data-input="userName" class="modal-input nooutline" placeholder="사용자 닉네임"></input></div>
+	        <div class="modal-input-div"><input data-input="userPassword" class="modal-input nooutline" type="password" placeholder="비밀번호"></input></div>
+	        <div class="modal-input-div"><input data-input="userPasswordConfirm" class="modal-input nooutline" type="password" placeholder="비밀번호 확인"></input></div>
+	        <div class="width100"><button btn-usage="join-submit" class="modal-submit button width100">등록</button></div>    
+	    </div>
+	</div>
+</th:block>
