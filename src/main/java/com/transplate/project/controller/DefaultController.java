@@ -1,6 +1,8 @@
 package com.transplate.project.controller;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -28,16 +30,21 @@ public class DefaultController {
 	private final ObjectMapper mapper;
 		
 	@PostMapping("/login")
-	public String login(HttpServletRequest request, @RequestBody LoginDto dto) {
+	public String login(HttpServletRequest request, HttpServletResponse response, @RequestBody LoginDto dto) {
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(MediaType.APPLICATION_JSON);
 
 		HttpEntity<LoginDto> entity = new HttpEntity<LoginDto>(dto, header);
 		
-		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:8081/auth/login", entity, String.class);
-		System.out.println(response.getBody());
+		ResponseEntity<String> tokenResponse = restTemplate.postForEntity("http://localhost:8081/auth/login", entity, String.class);
+		System.out.println(tokenResponse.getBody());
 		
-		return response.getBody();
+		Cookie cookie = new Cookie("accessToken", tokenResponse.getBody());
+		cookie.setHttpOnly(true);
+		cookie.setPath("/");
+		response.addCookie(cookie);
+		
+		return tokenResponse.getBody();
 	}
 	
 	@PostMapping("/join")
