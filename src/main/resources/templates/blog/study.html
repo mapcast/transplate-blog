@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  	<th:block th:replace="fragments/header :: headerFragment"></th:block>
+  	<link rel="stylesheet" th:href="@{/assets/css/post.css}" />
+  </head>
+  <body>
+    <th:block th:replace="fragments/sidenav :: sideFragment"></th:block>
+	    <div class="post-page">
+	             
+	    </div>
+	    <div class="postlist">
+	    	<div>
+	            <div>
+	                <div class="post-category" th:text="${post.get('category').textValue()}"></div>
+	                <h1 class="post-title" th:text="${post.get('subject').textValue()}"></h1>
+	                <div class="post-date" th:text="${post.get('createdTimeAt').textValue()}"></div>
+	                <hr/>
+	                <div class="post-content">
+	                </div>
+	                <div class="post-buttons">
+	                    <button class="button edit">수정</button>
+	                    <button class="button delete">삭제</button>
+	                </div>
+	            </div>
+	            <!-- 
+	            <div><div className="post-category"></div>
+	            <h1 className="post-title">글이 업거든요</h1></div>
+	             -->
+	        </div>
+	    	<!-- comment list -->
+	    	<div class="post-comment mt40">
+	            <div class="comment-container">
+	                <div th:each="comment : ${comments}" class="comments">
+	                    <div class="comments-writer" th:text="${comment.get('writer').textValue()}">{value.writer}</div>
+	                    <p class="comments-content" th:text="${comment.get('content').textValue()}"></p>
+	                    <div class="comments-etc">
+	                        <div>
+	                            <br/>
+	                            <span th:text="${comment.get('createdTimeAt').textValue()}"></span>	
+	                        </div>
+	                        <div>
+	                            <button class="button delete">삭제</button>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="comment-info">
+	                    <input class="guest-info" name="writer" placeholder="이름"></input>
+	                    <input class="guest-info" name="password" type="password" placeholder="비밀번호"></input>
+	                </div>
+	                <textarea class="comment-content" name="content" placeholder="댓글을 입력해주세요"></textarea>
+	                <div class="flexend"><button class="button submit">등록</button></div>
+	            </div>
+	        </div>
+			<!-- post list -->	    
+            <table class="postlist-table">
+                <thead>
+                    <tr class="postlist-category">
+                        <th width="90%" class="padding-left-10">공부 카테고리 포스트</th>
+                        <th width="10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="postlist-posts" th:each="list : ${postlist}">
+	                    <td class="padding-left-10"><a href="#" th:text="${list.get('subject').textValue()}"></a></td>
+	                    <td class="postlist-date" th:text="${list.get('createdTimeAt').textValue()}"></td>
+	                </tr>
+                </tbody>
+            </table>
+            <div class="post-prevnext">
+                <button class="post-prevnext-button">←prev</button>
+                <button class="post-prevnext-button">next→</button>
+            </div>
+        </div>
+    <th:block th:replace="fragments/loginModal :: loginFragment"></th:block>
+    <th:block th:replace="fragments/joinModal :: joinFragment"></th:block>
+  </body>
+</html>

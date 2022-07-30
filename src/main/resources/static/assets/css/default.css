@@ -70,6 +70,14 @@
 	    font-weight: 400;
 	    font-family: "Black Han Sans", sans-serif;
 	  }
+	  .blog-body {
+	    min-width: 99vw;
+	    min-height: 100vh;
+	    max-height: 100vh;
+	    cursor: default;
+	    padding: 3% 0;
+	    padding-left: 350px;
+	  }
 	  .nosmall {
 	    display: none;
 	  }
