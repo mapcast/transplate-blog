@@ -10,7 +10,7 @@
 	             
 	    </div>
 	    <div class="postlist">
-	    	<div>
+	    	<div th:if="${!post.isEmpty()}">
 	            <div>
 	                <div class="post-category" th:text="${post.get('category').textValue()}"></div>
 	                <h1 class="post-title" th:text="${post.get('subject').textValue()}"></h1>
@@ -30,8 +30,8 @@
 	        </div>
 	    	<!-- comment list -->
 	    	<div class="post-comment mt40">
-	            <div class="comment-container">
-	                <div th:each="comment : ${comments}" class="comments">
+	            <div class="comment-container" th:if="${!post.isEmpty()}">
+	                <div th:each="comment : ${post.get('comments')}" class="comments">
 	                    <div class="comments-writer" th:text="${comment.get('writer').textValue()}">{value.writer}</div>
 	                    <p class="comments-content" th:text="${comment.get('content').textValue()}"></p>
 	                    <div class="comments-etc">
