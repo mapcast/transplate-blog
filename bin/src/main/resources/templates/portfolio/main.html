@@ -5,10 +5,13 @@
   </head>
   <body>
     <th:block th:replace="fragments/sidenav :: sideFragment"></th:block>
-	    <div class="blog-body">
-	    </div>
-    <script th:src="@{/assets/js/bootstrap/bootstrap.min.js}"></script>
+    <div id="about">
+      <h1 id="about-name">조<font color="#bd5d38">현승</font></h1>
+      <span class="desc">010-6851-7574 · qlqldyd54321@gmail.com</span>
+      <p class="pharagraph mt-4">
+        2020-08 ~ 현재 - Seekers Inc. 재직중
+      </p>
+    </div>
     <th:block th:replace="fragments/loginModal :: loginFragment"></th:block>
-    <th:block th:replace="fragments/joinModal :: joinFragment"></th:block>
   </body>
 </html>

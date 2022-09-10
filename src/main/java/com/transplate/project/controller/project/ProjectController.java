@@ -10,8 +10,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/project")
 public class ProjectController {
-	@GetMapping("/blockchain")
-	public ModelAndView blockchain(HttpServletRequest request) {
+	
+	@GetMapping("")
+	public ModelAndView projects(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("project/projects");
+		return mav;
+	}
+	
+	@GetMapping("/side")
+	public ModelAndView sideProjects(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("project/blockchain");
 		return mav;
