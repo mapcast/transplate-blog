@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  	<th:block th:replace="fragments/header :: headerFragment"></th:block>
+  	<link rel="stylesheet" th:href="@{/assets/css/post.css}" />
+  </head>
+  <body>
+    <th:block th:replace="fragments/sidenav :: sideFragment"></th:block>
+    <th:block th:replace="fragments/loginModal :: loginFragment"></th:block>
+    <th:block th:replace="fragments/joinModal :: joinFragment"></th:block>
+  </body>
+</html>

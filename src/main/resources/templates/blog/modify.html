@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  	<th:block th:replace="fragments/header :: headerFragment"></th:block>
+  	<link rel="stylesheet" th:href="@{/assets/css/post.css}" />
+  </head>
+  <body>
+    <th:block th:replace="fragments/sidenav :: sideFragment"></th:block>
+    <input name="postId" type="hidden" th:value="${post.get('uuid').textValue()}">
+    <div class="blog-body">
+    	<div style='width: 100%; height: 100%; padding-right:10%'>
+    		<select name="category">
+    			<option value="study" selected>공부</option>
+    			<option value="dev">프로젝트 진행</option>
+    		</select>
+	    	<input name="subject" style="width: 85%; margin-bottom: 10px;" placeholder="제목" th:value="${post.get('subject').textValue()}"/>
+			<textarea id="editor4" name="editor4" th:utext="${post.get('content').textValue()}">
+				
+			</textarea>
+	        <button btn-usage="modify-post" class="btn btn-primary" style='margin-top:10px;'>저장</button>
+    	</div>
+    </div>
+    
+    
+    <th:block th:replace="fragments/loginModal :: loginFragment"></th:block>
+    <th:block th:replace="fragments/joinModal :: joinFragment"></th:block>
+  </body>
+  <script>
+  
+  
+  		$("button[btn-usage=modify-post]").on("click", function() {
+  			let subject = $("input[name=subject]").val();
+  			let content = CKEDITOR.instances.editor4.getData();
+  			let category = $("select[name=category]").val();
+  			let uuid = $("input[name=postId]").val();
+  			
+  			let dto = new Object();
+  			dto.uuid = uuid;
+  			dto.subject = subject;
+  			dto.contents = content;
+  			dto.category = category;
+  			
+  			let parsedDto = JSON.stringify(dto);
+  			
+  			$.ajax({
+			    url: "/blog/modify", 
+			    data: parsedDto,  
+			    method: "POST",   
+			    dataType: "JSON",
+			    contentType: "application/json"
+			})
+			.done(function(json) {
+			    alert("글 수정에 성공했습니다");
+			    location.href="/blog/" + category + "/" + uuid;
+			})
+			.fail(function(xhr, status, errorThrown) {
+				alert("글 수정에 실패했습니다");
+			});
+  		});
+  
+		CKEDITOR.replace('editor4', {
+		  	filebrowserUploadMethod :'form',
+		  	filebrowserUploadUrl:'/mine/imageUpload.do'
+		});
+  </script>
+  <!-- 
+  <script>
+	let ckeditor_config = {
+		filebrowserUploadMethod :'form',
+		filebrowserUploadUrl: "/admin/post/imageUpload",
+		extraPlugins : 'autogrow',
+    };
+      
+    CKEDITOR.replace("editor4", ckeditor_config);
+  </script>
+   -->
+</html>
