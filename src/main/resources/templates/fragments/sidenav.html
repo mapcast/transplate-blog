@@ -41,9 +41,12 @@
 	      </li>
 	    </ul>
 	  </div>
-	  <div>
-		  <button btn-usage="login" type="button" class="btn btn-link">로그인</button>
+	  <div th:if="${username.equals('')}">
+	      <button btn-usage="login" type="button" class="btn btn-link">로그인</button>
 		  <button btn-usage="join" type="button" class="btn btn-link">회원가입</button>
+	  </div>
+	  <div th:unless="${username.equals('')}">
+		  <a href="#" th:text="${username}"></a> 님 환영합니다.
 	  </div>
 	</nav>
 </th:block>

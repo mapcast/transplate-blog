@@ -6,7 +6,7 @@
   </head>
   <body>
     <th:block th:replace="fragments/sidenav :: sideFragment"></th:block>
-    	<input name="postId" type="hidden" th:value="${post.get('uuid').textValue()}">
+    	<input name="post-id" type="hidden" th:value="${post.get('uuid').textValue()}">
 	    <div class="postlist">
 	    	<div>
 	            <div th:if="${!post.isEmpty()}">
@@ -30,7 +30,7 @@
 	    	<!-- comment list -->
 	    	<div class="post-comment mt40">
 	            <div class="comment-container" th:if="${!post.isEmpty()}">
-	                <div th:each="comment : ${post.get('comments')}" class="comments">
+	                <div th:each="comment : ${post.get('comments')}" class="comments" th:if="${!comment.get('isDeleted').booleanValue()}" th:comment-id="${comment.get('uuid').textValue()}">
 	                    <div class="comments-writer" th:text="${comment.get('writer').textValue()}">{value.writer}</div>
 	                    <p class="comments-content" th:text="${comment.get('content').textValue()}"></p>
 	                    <div class="comments-etc">
@@ -39,20 +39,20 @@
 	                            <span th:text="${comment.get('createdTimeAt').textValue()}"></span>	
 	                        </div>
 	                        <div>
-	                            <button class="button delete">삭제</button>
+	                            <button class="button" btn-usage="delete-comment">삭제</button>
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="comment-info">
-	                    <input class="guest-info" name="writer" placeholder="이름"></input>
-	                    <input class="guest-info" name="password" type="password" placeholder="비밀번호"></input>
+	                    <input class="guest-info" name="comment-writer" placeholder="이름"></input>
+	                    <input class="guest-info" name="comment-password" type="password" placeholder="비밀번호"></input>
 	                </div>
-	                <textarea class="comment-content" name="content" placeholder="댓글을 입력해주세요"></textarea>
-	                <div class="flexend"><button class="button submit">등록</button></div>
+	                <textarea class="comment-content" name="comment-content" placeholder="댓글을 입력해주세요"></textarea>
+	                <div class="flexend"><button class="button" btn-usage="write-comment">등록</button></div>
 	            </div>
 	        </div>
 			<!-- post list -->	    
-            <table class="postlist-table">
+            <table class="postlist-table mt40">
                 <thead>
                     <tr class="postlist-category">
                         <th width="90%" class="padding-left-10">공부 카테고리 포스트</th>

@@ -1,8 +1,10 @@
 package com.transplate.project.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class PostDto {
 	
 	private String uuid;

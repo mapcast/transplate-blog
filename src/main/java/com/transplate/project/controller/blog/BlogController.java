@@ -55,7 +55,7 @@ public class BlogController {
 		mav.addObject("postlist", postlist.get("content"));
 		mav.addObject("page", postlist.get("pageable").get("pageNumber").intValue());
 		mav.addObject("totalPages", postlist.get("totalPages").intValue());
-		mav.setViewName("blog/study");
+		mav.setViewName("blog/posts");
 		return mav;
 	}
 	
@@ -86,7 +86,7 @@ public class BlogController {
 		mav.addObject("postlist", postlist.get("content"));
 		mav.addObject("page", postlist.get("pageable").get("pageNumber").intValue());
 		mav.addObject("totalPages", postlist.get("totalPages").intValue());
-		mav.setViewName("blog/study");
+		mav.setViewName("blog/posts");
 		return mav;
 	}
 	

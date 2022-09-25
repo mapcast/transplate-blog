@@ -63,6 +63,12 @@
 .post-comment{
 	padding: 0 5%;
 }
+.post-prevnext {
+	margin-top:10px;
+	display:flex;
+	padding: 0 30%;
+	justify-content: center;
+}
 .comment-container{
 	background-color: rgb(248, 132, 92);
 	border-radius:6px;

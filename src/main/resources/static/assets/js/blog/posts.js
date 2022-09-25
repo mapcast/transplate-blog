@@ -14,11 +14,11 @@ $(function() {
 	
 	$("button[btn-usage=delete-post]").on("click", function () {
 		let conf = confirm("정말 삭제하시겠습니까?");
-		console.log($("input[name=postId]").val());
+		console.log($("input[name=post-id]").val());
 		
 		if(conf) {
 			$.ajax({
-			    url: "/blog/delete/" + $("input[name=postId]").val(), 
+			    url: "/blog/delete/" + $("input[name=post-id]").val(), 
 			    method: "POST",   
 			    dataType: "text"
 			})
@@ -27,6 +27,53 @@ $(function() {
 			})
 			.fail(function(xhr, status, errorThrown) {
 				alert("글 삭제에 실패했습니다");
+			});
+		}
+	});
+	
+	$("button[btn-usage=write-comment]").on("click", function() {
+		let dto = new Object();
+		dto.writer = $("input[name=comment-writer]").val();
+		dto.password = $("input[name=comment-password]").val();
+		dto.content = $("textarea[name=comment-content]").val();
+		dto.postId = $("input[name=post-id]").val();
+		
+		let parsedDto = JSON.stringify(dto);
+		
+		$.ajax({
+		    url: "/blog/comment/write", 
+		    data: parsedDto,  
+		    method: "POST",   
+		    dataType: "JSON",
+		    contentType: "application/json"
+		})
+		.done(function(json) {
+		    alert("댓글 작성에 성공했습니다");
+		    location.reload();
+		})
+		.fail(function(xhr, status, errorThrown) {
+			alert("댓글 작성에 실패했습니다");
+		});
+	});
+	
+	$("button[btn-usage=delete-comment]").on("click", function() {
+		let conf = confirm("정말 삭제하시겠습니까?");
+		console.log($("input[name=post-id]").val());
+		
+		let commentId = $(this).parent().parent().parent().attr("comment-id");
+		
+		if(conf) {
+			$.ajax({
+			    url: "/blog/comment/delete/" + commentId, 
+			    method: "POST",   
+			    dataType: "text"
+			})
+			.done(function(json) {
+			    alert("댓글 삭제에 성공했습니다");
+				location.reload();
+			})
+			.fail(function(xhr, status, errorThrown) {
+				alert("댓글 삭제에 실패했습니다");
 			});
 		}
 	});
