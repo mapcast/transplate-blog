@@ -9,7 +9,7 @@ $(function() {
 	});
 	
 	$("button[btn-usage=modify-post]").on("click", function () {
-		location.href = "/blog/modify/" + $("input[name=postId]").val();
+		location.href = "/blog/modify/" + $("input[name=post-id]").val();
 	});
 	
 	$("button[btn-usage=delete-post]").on("click", function () {
@@ -33,8 +33,14 @@ $(function() {
 	
 	$("button[btn-usage=write-comment]").on("click", function() {
 		let dto = new Object();
-		dto.writer = $("input[name=comment-writer]").val();
-		dto.password = $("input[name=comment-password]").val();
+		if(typeof $("input[name=comment-password]").val() == "undefined") {
+			dto.writerId = $("input[name=comment-writer-id]").val();
+			dto.writer = $("input[name=comment-writer]").val();
+		} else {
+			dto.writer = $("input[name=comment-writer]").val();
+			dto.password = $("input[name=comment-password]").val();
+		}
+		
 		dto.content = $("textarea[name=comment-content]").val();
 		dto.postId = $("input[name=post-id]").val();
 		

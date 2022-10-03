@@ -11,10 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/project")
 public class ProjectController {
 	
-	@GetMapping("")
-	public ModelAndView projects(HttpServletRequest request) {
+	@GetMapping("/seekers")
+	public ModelAndView seekersProjects(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("project/projects");
+		mav.setViewName("project/seekers");
 		return mav;
 	}
 	

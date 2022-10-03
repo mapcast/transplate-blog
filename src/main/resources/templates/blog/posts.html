@@ -6,30 +6,39 @@
   </head>
   <body>
     <th:block th:replace="fragments/sidenav :: sideFragment"></th:block>
-    	<input name="post-id" type="hidden" th:value="${post.get('uuid').textValue()}">
 	    <div class="postlist">
 	    	<div>
-	            <div th:if="${!post.isEmpty()}">
-	                <div class="post-category" th:text="${post.get('category').textValue()}"></div>
+	            <div th:if="${post != null}">
+	            	<input name="post-id" type="hidden" th:value="${post.get('uuid').textValue()}">
+	                <div th:if="${post.get('category').textValue().equals('study')}" class="post-category">공부</div>
+	                <div th:if="${post.get('category').textValue().equals('dev')}" class="post-category">프로젝트 진행</div>
 	                <h1 class="post-title" th:text="${post.get('subject').textValue()}"></h1>
 	                <div class="post-date" th:text="${post.get('createdTimeAt').longValue()}"></div>
 	                <hr/>
 	                <div class="post-content" th:utext="${post.get('content').textValue()}">
 	                </div>
 	                <div class="post-buttons">
-	                	<button class="button" btn-usage="write-post">글쓰기</button>
-	                    <button class="button" btn-usage="modify-post">수정</button>
-	                    <button class="button" btn-usage="delete-post">삭제</button>
+	                	<th:block th:if="${userInfo != null}">
+		            		<button th:if="${userInfo.get('role').textValue().equals('ROLE_ADMIN')}" class="button" btn-usage="write-post">글쓰기</button>
+		            		<button th:if="${userInfo.get('role').textValue().equals('ROLE_ADMIN')}" class="button" btn-usage="modify-post">수정</button>
+	                   		<button th:if="${userInfo.get('role').textValue().equals('ROLE_ADMIN')}" class="button" btn-usage="delete-post">삭제</button>
+		            	</th:block>
 	                </div>
 	            </div>
-	            <div th:unless="${!post.isEmpty()}">
+	            <div th:unless="${post != null}">
 		            <div class="post-category"></div>
 		            <h1 className="post-title">글이 없습니다.</h1>
+		            
+		            <div class="post-buttons">
+		            	<th:block th:if="${userInfo != null}">
+		            		<button th:if="${userInfo.get('role').textValue().equals('ROLE_ADMIN')}" class="button" btn-usage="write-post">글쓰기</button>
+		            	</th:block>
+	                </div>
 	            </div>
 	        </div>
 	    	<!-- comment list -->
 	    	<div class="post-comment mt40">
-	            <div class="comment-container" th:if="${!post.isEmpty()}">
+	            <div class="comment-container" th:if="${post != null}">
 	                <div th:each="comment : ${post.get('comments')}" class="comments" th:if="${!comment.get('isDeleted').booleanValue()}" th:comment-id="${comment.get('uuid').textValue()}">
 	                    <div class="comments-writer" th:text="${comment.get('writer').textValue()}">{value.writer}</div>
 	                    <p class="comments-content" th:text="${comment.get('content').textValue()}"></p>
@@ -43,9 +52,14 @@
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="comment-info">
+	                <div th:if="${userInfo == null}" class="comment-info">
 	                    <input class="guest-info" name="comment-writer" placeholder="이름"></input>
 	                    <input class="guest-info" name="comment-password" type="password" placeholder="비밀번호"></input>
+	                </div>
+	                <div th:unless="${userInfo == null}" class="comment-info">
+	                	<input type="hidden" name="comment-writer-id" th:value="${userInfo.get('userId').textValue()}">
+	                	<input type="hidden" name="comment-writer" th:value="${userInfo.get('userNickname').textValue()}">
+	                    <div class="comments-writer" th:text="${userInfo.get('userNickname').textValue()}"></div>
 	                </div>
 	                <textarea class="comment-content" name="comment-content" placeholder="댓글을 입력해주세요"></textarea>
 	                <div class="flexend"><button class="button" btn-usage="write-comment">등록</button></div>
@@ -55,7 +69,7 @@
             <table class="postlist-table mt40">
                 <thead>
                     <tr class="postlist-category">
-                        <th width="90%" class="padding-left-10">공부 카테고리 포스트</th>
+                        <th width="90%" class="padding-left-10">리스트</th>
                         <th width="10%"></th>
                     </tr>
                 </thead>

@@ -47,6 +47,13 @@ public class DefaultController {
 		return tokenResponse.getBody();
 	}
 	
+	@PostMapping("/signout")
+	public void logout(HttpServletRequest request, HttpServletResponse response) {
+		Cookie cookie = new Cookie("accessToken", null);
+	    cookie.setMaxAge(0); 
+	    response.addCookie(cookie); 
+	}
+	
 	@PostMapping("/join")
 	public String join(HttpServletRequest request, @RequestBody JoinDto dto) throws JsonProcessingException {
 		HttpHeaders header = new HttpHeaders();

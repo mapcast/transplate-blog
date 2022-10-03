@@ -47,7 +47,7 @@
 			})
 			.done(function(json) {
 			    alert("글 작성에 성공했습니다");
-			    location.href="/blog/" + category
+			    location.href="/blog?category=" + category
 			})
 			.fail(function(xhr, status, errorThrown) {
 				alert("글 작성에 실패했습니다");
