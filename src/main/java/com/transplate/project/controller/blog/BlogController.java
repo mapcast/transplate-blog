@@ -90,6 +90,7 @@ public class BlogController {
 		mav.addObject("userInfo", userInfo);
 		mav.addObject("postlist", postlist.get("content"));
 		mav.addObject("page", postlist.get("pageable").get("pageNumber").intValue());
+		mav.addObject("category", request.getParameter("category"));
 		mav.addObject("totalPages", postlist.get("totalPages").intValue());
 		mav.setViewName("blog/posts");
 		return mav;

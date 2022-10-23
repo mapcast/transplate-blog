@@ -81,9 +81,13 @@
                 </tbody>
             </table>
             <div class="post-prevnext">
-                <button th:onclick="'javascript:prevPage(' + ${page} + ')'" class="post-prevnext-button" th:if="${page != 0}">←prev</button>
-                <button th:onclick="'javascript:nextPage(' + ${page} + ')'" class="post-prevnext-button" th:if="${page + 1 != totalPages}">next→</button>
+                <button btn-usage="prev-page" class="post-prevnext-button" th:if="${page != 0}">←prev</button>
+                <button btn-usage="next-page" class="post-prevnext-button" th:if="${page + 1 != totalPages}">next→</button>
             </div>
+            <form id="hiddenForm" action="">
+            	<input type="hidden" name="page" th:value="${page}">
+            	<input type="hidden" name="category" th:value="${category}">
+            </form>
         </div>
     <th:block th:replace="fragments/loginModal :: loginFragment"></th:block>
     <th:block th:replace="fragments/joinModal :: joinFragment"></th:block>

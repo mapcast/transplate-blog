@@ -120,6 +120,7 @@
 }
 
 .cm-panel {
+	background-color: #F8FFDB;
 	position: absolute;
 	top: 120px;
 	left: 600px;

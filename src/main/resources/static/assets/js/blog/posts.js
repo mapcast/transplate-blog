@@ -83,12 +83,14 @@ $(function() {
 			});
 		}
 	});
+	
+	$("button[btn-usage=prev-page]").on("click", function() {
+		$("input[name=page]").val($("input[name=page]").val() - 1);
+		$("#hiddenForm").submit();
+	});
+	
+	$("button[btn-usage=next-page]").on("click", function() {
+		$("input[name=page]").val($("input[name=page]").val() + 1);
+		$("#hiddenForm").submit();
+	});
 });
-
-function prevPage(page) {
-	location.href = "/blog/study?page=" + (page - 1); 
-}
-
-function nextPage(page) {
-	location.href = "/blog/study?page=" + (page * 1 + 1); 
-}

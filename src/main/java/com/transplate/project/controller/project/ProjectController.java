@@ -21,7 +21,7 @@ public class ProjectController {
 	@GetMapping("/side")
 	public ModelAndView sideProjects(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("project/blockchain");
+		mav.setViewName("project/side");
 		return mav;
 	}
 }
