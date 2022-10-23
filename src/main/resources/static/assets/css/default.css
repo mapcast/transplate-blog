@@ -1,235 +1,235 @@
-	  #sideNav {
-	    text-align: center;
-	    position: fixed;
-	    top: 0;
-	    left: 0;
-	    display: flex;
-	    flex-direction: column;
-	    width: 17rem;
-	    height: 100vh;
-	    padding-top: 3%;
-	    padding-bottom: 3%;
-	  }
-	  #sideNav .navbar-brand {
-	    display: flex;
-	    margin: auto auto 0;
-	    padding: 0.5rem;
-	  }
-	  #sideNav .navbar-brand .img-profile {
-	    max-width: 10rem;
-	    max-height: 10rem;
-	    border: 0.5rem solid rgba(255, 255, 255, 0.2);
-	  }
-	  #sideNav .navbar-collapse {
-	    display: flex;
-	    align-items: flex-start;
-	    flex-grow: 0;
-	    width: 100%;
-	    margin-bottom: auto;
-	  }
-	  #sideNav .navbar-collapse .navbar-nav {
-	    flex-direction: column;
-	    width: 100%;
-	  }
-	  #sideNav .navbar-collapse .navbar-nav .nav-item {
-	    display: block;
-	  }
-	  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-	    display: block;
-	  }
-	  .fixed-top {
-	    position: fixed;
-	    top: 0px;
-	    right: 0px;
-	    left: 0px;
-	    z-index: 1030;
-	  }
-	  .navbar-expand-lg {
-	    justify-content: flex-start;
-	    flex-flow: row nowrap;
-	  }
-	
-	  .navbar {
-	    position: relative;
-	    display: flex;
-	    flex-wrap: wrap;
-	    align-items: center;
-	    justify-content: space-between;
-	    padding: 0.5rem 1rem;
-	  }
-	  #about {
-	    min-width: 99vw;
-	    min-height: 100vh;
-	    max-height: 100vh;
-	    cursor: default;
-	    padding: 18% 0;
-	    padding-left: 350px;
-	  }
-	  #about #about-name {
-	    font-size: 6rem;
-	    font-weight: 400;
-	    font-family: "Black Han Sans", sans-serif;
-	  }
-	  .blog-body {
-	    min-width: 99vw;
-	    min-height: 100vh;
-	    max-height: 100vh;
-	    cursor: default;
-	    padding: 3% 0;
-	    padding-left: 350px;
-	  }
-	  .nosmall {
-	    display: none;
-	  }
-	  #skills {
-	    min-width: 99vw;
-	    min-height: 100vh;
-	    cursor: default;
-	    padding-top: 3%;
-	    padding-left: 350px;
-	  }
-	  .skills {
-	    display: flex;
-	    margin-top: 10vh;
-	    text-align: center;
-	  }
-	  .projects {
-	    min-width: 99vw;
-	    min-height: 100vh;
-	    padding-top: 3%;
-	    padding-left: 350px;
-	  }
-	  .skills-head {
-	    font-size: 3rem;
-	    padding-top: 25px;
-	    min-width: 170px;
-	  }
-	  .skills-body {
-	    margin-left: 100px;
-	  }
-	  .img-profile {
-	    max-width: 10rem;
-	    max-height: 10rem;
-	    border: 0.5rem solid rgba(255, 255, 255, 0.2);
-	    cursor: pointer;
-	  }
-	  .carousel-content {
-	    padding: 0 8%;
-	  }
-	  .cc-main {
-	    display: flex;
-	  }
-	  .ccmain-image {
-	    width: 850px;
-	    height: 500px;
-	  }
-	  .cmImage {
-	    width: 100%;
-	    height: 100%;
-	  }
-	  .ccmain-desc {
-	    padding: 2%;
-	    width: 450px;
-	    height: 500px;
-	  }
-	  .cc-bottom {
-	    min-width: 1250px;
-	    margin-top: 20px;
-	    display: flex;
-	    text-align: center;
-	  }
-	  .cb-head {
-	    font-size: 2rem;
-	    padding-top: 60px;
-	  }
-	  .cb-content {
-	    margin-left: 50px;
-	  }
-	  .cb-image-wrap {
-		height: 100px;
-		width: 100%;
-		overflow: hidden;
-	  }
-	  .cbcImage {
-	    width: 150px;
-	    
-	  }
-	  .cbpadtop {
-	    margin-top: 36px;
-	  }
-	  .contentPadding {
-	    padding: 0 12%;
-	  }
-	  .cc-sub {
-	    width: 100%;
-	    height: 50%;
-	    display: flex;
-	  }
-	  .carousel-small-item {
-	    width: 100%;
-	    height: 50%;
-	    text-align: center;
-	  }
-	  .li-imagediv {
-	    width: 100%;
-	    height: 320px;
-	    padding: 0 10%;
-	  }
-	  .li-image {
-	    max-width: 100%;
-	    height: 320px;
-	  }
-	  #about .desc {
-	    color: rgb(102, 102, 102);
-	    font-size: 1.5rem;
-	    font-family: Jua, sans-serif;
-	  }
-	  .bighead {
-	    font-size: 5rem;
-	  }
-	  #titles {
-	    font-size: 4rem;
-	  }
-	body {
-	  font-family: "Black Han Sans", sans-serif;
-	  font-size: 1rem;
-	  line-height: 1.5;
-	  color: rgb(33, 37, 41);
-	  margin: 0;
-	}
-	#bigblock {
-	  font-weight: 400;
-	}
-	.mt40 {
-	  margin-top: 40px;
-	}
-	.mt80 {
-	  margin-top: 80px;
-	}
-	.mt120 {
-	  margin-top: 120px;
-	}
-	.projectCategory {
-	  color: rgb(17, 17, 17);
-	  margin-top: 30px;
-	  margin-bottom: 10px;
-	  font-size: 1.2rem;
-	  font-family: Gugi, cursive;
-	  cursor: default;
-	}
-	.grayborder {
-	  border: 1px solid gray;
-	}
-	.bg-orange {
-	  background-color: rgb(248, 132, 92);
-	}
-	.pharagraph {
-	  color: rgb(170, 170, 170);
-	  font-size: 1.2rem;
-	  font-family: "Do Hyeon", sans-serif;
-	}
-	.pharagraph-dark {
-	  color: #666666;
-	  font-size: 1.2rem;
-	  font-family: "Do Hyeon", sans-serif;
-	}
+ #sideNav {
+   text-align: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: flex;
+   flex-direction: column;
+   width: 17rem;
+   height: 100vh;
+   padding-top: 3%;
+   padding-bottom: 3%;
+ }
+ #sideNav .navbar-brand {
+   display: flex;
+   margin: auto auto 0;
+   padding: 0.5rem;
+ }
+ #sideNav .navbar-brand .img-profile {
+   max-width: 10rem;
+   max-height: 10rem;
+   border: 0.5rem solid rgba(255, 255, 255, 0.2);
+ }
+ #sideNav .navbar-collapse {
+   display: flex;
+   align-items: flex-start;
+   flex-grow: 0;
+   width: 100%;
+   margin-bottom: auto;
+ }
+ #sideNav .navbar-collapse .navbar-nav {
+   flex-direction: column;
+   width: 100%;
+ }
+ #sideNav .navbar-collapse .navbar-nav .nav-item {
+   display: block;
+ }
+ #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+   display: block;
+ }
+ .fixed-top {
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   left: 0px;
+   z-index: 1030;
+ }
+ .navbar-expand-lg {
+   justify-content: flex-start;
+   flex-flow: row nowrap;
+ }
+
+ .navbar {
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0.5rem 1rem;
+ }
+ #about {
+   min-width: 99vw;
+   min-height: 100vh;
+   max-height: 100vh;
+   cursor: default;
+   padding: 18% 0;
+   padding-left: 350px;
+ }
+ #about #about-name {
+   font-size: 6rem;
+   font-weight: 400;
+   font-family: "Black Han Sans", sans-serif;
+ }
+ .blog-body {
+   min-width: 99vw;
+   min-height: 100vh;
+   max-height: 100vh;
+   cursor: default;
+   padding: 3% 0;
+   padding-left: 350px;
+ }
+ .nosmall {
+   display: none;
+ }
+ #skills {
+   min-width: 99vw;
+   min-height: 100vh;
+   cursor: default;
+   padding-top: 3%;
+   padding-left: 350px;
+ }
+ .skills {
+   display: flex;
+   margin-top: 10vh;
+   text-align: center;
+ }
+ .projects {
+   min-width: 99vw;
+   min-height: 100vh;
+   padding-top: 3%;
+   padding-left: 350px;
+ }
+ .skills-head {
+   font-size: 3rem;
+   padding-top: 25px;
+   min-width: 170px;
+ }
+ .skills-body {
+   margin-left: 100px;
+ }
+ .img-profile {
+   max-width: 10rem;
+   max-height: 10rem;
+   border: 0.5rem solid rgba(255, 255, 255, 0.2);
+   cursor: pointer;
+ }
+ .carousel-content {
+   padding: 0 8%;
+ }
+ .cc-main {
+   display: flex;
+ }
+ .ccmain-image {
+   width: 850px;
+   height: 500px;
+ }
+ .cmImage {
+   width: 100%;
+   height: 100%;
+ }
+ .ccmain-desc {
+   padding: 2%;
+   width: 450px;
+   height: 500px;
+ }
+ .cc-bottom {
+   min-width: 1250px;
+   margin-top: 20px;
+   display: flex;
+   text-align: center;
+ }
+ .cb-head {
+   font-size: 2rem;
+   padding-top: 60px;
+ }
+ .cb-content {
+   margin-left: 50px;
+ }
+ .cb-image-wrap {
+height: 100px;
+width: 100%;
+overflow: hidden;
+ }
+ .cbcImage {
+   width: 150px;
+   
+ }
+ .cbpadtop {
+   margin-top: 36px;
+ }
+ .contentPadding {
+   padding: 0 12%;
+ }
+ .cc-sub {
+   width: 100%;
+   height: 50%;
+   display: flex;
+ }
+ .carousel-small-item {
+   width: 100%;
+   height: 50%;
+   text-align: center;
+ }
+ .li-imagediv {
+   width: 100%;
+   height: 320px;
+   padding: 0 10%;
+ }
+ .li-image {
+   max-width: 100%;
+   height: 320px;
+ }
+ #about .desc {
+   color: rgb(102, 102, 102);
+   font-size: 1.5rem;
+   font-family: Jua, sans-serif;
+ }
+ .bighead {
+   font-size: 5rem;
+ }
+ #titles {
+   font-size: 4rem;
+ }
+body {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgb(33, 37, 41);
+  margin: 0;
+}
+#bigblock {
+  font-weight: 400;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.mt80 {
+  margin-top: 80px;
+}
+.mt120 {
+  margin-top: 120px;
+}
+.projectCategory {
+  color: rgb(17, 17, 17);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-family: Gugi, cursive;
+  cursor: default;
+}
+.grayborder {
+  border: 1px solid gray;
+}
+.bg-orange {
+  background-color: rgb(248, 132, 92);
+}
+.pharagraph {
+  color: rgb(170, 170, 170);
+  font-size: 1.2rem;
+  font-family: "Do Hyeon", sans-serif;
+}
+.pharagraph-dark {
+  color: #666666;
+  font-size: 1.2rem;
+  font-family: "Do Hyeon", sans-serif;
+}
