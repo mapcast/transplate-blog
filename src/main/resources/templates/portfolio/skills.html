@@ -5,9 +5,11 @@
   	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/assets/css/radial/circlemenu.css" type="text/css">
-
+	<link rel="stylesheet" href="/jquery-loading/dist/jquery.preloader.css" type="text/css">
+	<script src="/jquery-loading/dist/jquery.preloader.min.js" crossorigin="anonymous"></script>
   </head>
   <body>
+  	<div class="loading" id="preloader"><div id="preloader-inner"></div> </div>
     <th:block th:replace="fragments/sidenav :: sideFragment"></th:block>
     <div class="blog-body">
     	<div id="my-circle-menu" class="cm-container">
@@ -40,6 +42,7 @@
     			<ul>
     				<li>전반적인 MVC와 RDBMS를 사용한 데이터 CRUD 구현</li>
     			</ul>
+    			<div class="tempspin"></div>
     		</div>
     	</div>
     	<div class="cm-panel" id="frontend">
@@ -137,6 +140,10 @@
 <script src="/assets/js/radial/circlemenu.js" type="text/javascript"></script>
 <script>
 $(function() {
+
+
+	//
+
 	let skills = ['Java', 'Frontend', 'Spring Boot', 'RDB', 'Elastic', 'React', 'Rust', 'Cloud'];
 	
 	let DATAS = new Array();
@@ -162,8 +169,10 @@ $(function() {
 		onInit: function() {
 		},
 		onChangeBegin: function() {
+			$(".loading").show();
 		},
 		onChangeComplete: function(data) {
+			$(".loading").hide();
 			$(".cm-panel").hide();
 			$("#" + data.url).show();
 		}

@@ -78,9 +78,6 @@
    padding: 3% 0;
    padding-left: 350px;
  }
- .nosmall {
-   display: none;
- }
  #skills {
    min-width: 99vw;
    min-height: 100vh;
@@ -232,4 +229,12 @@ body {
   color: #666666;
   font-size: 1.2rem;
   font-family: "Do Hyeon", sans-serif;
+}
+.loading {
+	position: absolute;
+	background-color : rgba(0, 0, 0, 0.2);
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	display: none;
 }

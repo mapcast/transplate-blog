@@ -120,7 +120,7 @@
 }
 
 .cm-panel {
-	background-color: #F8FFDB;
+	background-color: #FFD8A9;
 	position: absolute;
 	top: 120px;
 	left: 600px;
@@ -132,7 +132,7 @@
 }
 .cm-panel-inner {
 	padding: 2%;
-	color: #999999;
+	color: #333333;
     font-size: 1.4rem;
     font-family: "Do Hyeon", sans-serif;
 }
