@@ -24,11 +24,14 @@ $(function() {
 			})
 			.done(function(json) {
 			    alert("글 삭제에 성공했습니다");
+				location.reload();
 			})
 			.fail(function(xhr, status, errorThrown) {
 				alert("글 삭제에 실패했습니다");
+				location.reload();
 			});
 		}
+		
 	});
 	
 	$("button[btn-usage=write-comment]").on("click", function() {

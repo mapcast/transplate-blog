@@ -36,7 +36,7 @@ public class DefaultController {
 
 		HttpEntity<LoginDto> entity = new HttpEntity<LoginDto>(dto, header);
 		
-		ResponseEntity<String> tokenResponse = restTemplate.postForEntity("http://localhost:8081/auth/login", entity, String.class);
+		ResponseEntity<String> tokenResponse = restTemplate.postForEntity("http://localhost:8082/auth/login", entity, String.class);
 		System.out.println(tokenResponse.getBody());
 		
 		Cookie cookie = new Cookie("accessToken", tokenResponse.getBody());
@@ -61,7 +61,7 @@ public class DefaultController {
 
 		HttpEntity<String> entity = new HttpEntity<String>(mapper.writeValueAsString(dto), header);
 		
-		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:8081/auth/join", entity, String.class);
+		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:8082/auth/join", entity, String.class);
 		System.out.println(response.getBody());
 		
 		return response.getBody();

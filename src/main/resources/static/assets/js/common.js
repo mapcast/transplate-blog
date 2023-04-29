@@ -74,7 +74,8 @@ function loginSubmit() {
 function joinSubmit() {
 	let joinData = new Object();
 	joinData.userId = $(".join-modal").find("input[data-input=userId]").val();
-	joinData.userName = $(".join-modal").find("input[data-input=userName]").val();
+	
+	joinData.userNickname = $(".join-modal").find("input[data-input=userName]").val();
 	joinData.password = $(".join-modal").find("input[data-input=userPassword]").val();
 	
 	let dataString = JSON.stringify(joinData);

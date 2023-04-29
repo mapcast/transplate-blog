@@ -126,3 +126,7 @@
 	margin-bottom:5px;
 	vertical-align: bottom;
 }
+
+.cke_dialog_ui_input_file {
+	min-height: 200px;
+}

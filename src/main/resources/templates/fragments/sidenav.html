@@ -40,7 +40,8 @@
 		  <button btn-usage="join" type="button" class="btn btn-link">회원가입</button>
 	  </div>
 	  <div th:unless="${userInfo == null}">
-		  <a href="#" th:text="${userInfo.get('userId').textValue()}"></a> 님 환영합니다.
+		  <a href="#" th:text="${userInfo.get('userNickname').textValue()}"></a> 님 환영합니다.
+		  <br/>
 		  <button btn-usage="logout" type="button" class="btn btn-link">로그아웃</button>
 	  </div>
 	</nav>
