@@ -23,6 +23,11 @@ public class ProfileController {
 	
 	private final ObjectMapper mapper;
 	
+	@GetMapping("/")
+	public String redirect(HttpServletRequest request) {
+		return "redirect:/profile";
+	}
+	
 	@GetMapping("/profile")
 	public ModelAndView index(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();

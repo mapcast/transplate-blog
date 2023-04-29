@@ -47,9 +47,12 @@
 	                            <br/>
 	                            <span th:text="${comment.get('createdTimeAt').textValue()}"></span>	
 	                        </div>
-	                        <div>
-	                            <button class="button" btn-usage="delete-comment">삭제</button>
-	                        </div>
+	                        <th:block th:if="${userInfo != null}">
+	                        	<div th:if="${userInfo.get('role').textValue().equals('ROLE_ADMIN') || userInfo.get('userId').textValue().equals(comment.get('writerId').textValue())}">
+		                            <button class="button" btn-usage="delete-comment">삭제</button>
+		                        </div>
+	                        </th:block>
+	                        
 	                    </div>
 	                </div>
 	                <div th:if="${userInfo == null}" class="comment-info">
